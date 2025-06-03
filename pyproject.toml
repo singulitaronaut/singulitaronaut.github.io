@@ -1,0 +1,27 @@
+[project]
+name = "markdown-blog"
+version = "1.0.0"
+description = "A static blog generator that converts markdown files with YAML frontmatter into beautiful HTML"
+authors = [
+    {name = "Blog Author", email = "author@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "markdown>=3.5.1",
+    "Jinja2>=3.1.2",
+    "PyYAML>=6.0.1",
+    "python-frontmatter>=1.0.0",
+    "Pillow>=10.1.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/markdown-blog"
+Repository = "https://github.com/yourusername/markdown-blog"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = [] 

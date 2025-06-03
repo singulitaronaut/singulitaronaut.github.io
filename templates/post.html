@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}{{ metadata.title }} - {{ site_title or "My Blog" }}{% endblock %}
+{% block description %}{{ metadata.description }}{% endblock %}
+{% block author %}{{ metadata.author }}{% endblock %}
+
+{% block og_type %}article{% endblock %}
+{% block og_title %}{{ metadata.title }}{% endblock %}
+{% block og_description %}{{ metadata.description }}{% endblock %}
+{% block og_image %}{{ metadata.image }}{% endblock %}
+
+{% block extra_head %}
+{% if metadata.date %}
+<meta property="article:published_time" content="{{ metadata.date.strftime('%Y-%m-%dT%H:%M:%S') }}">
+{% endif %}
+{% if metadata.author %}
+<meta property="article:author" content="{{ metadata.author }}">
+{% endif %}
+{% if metadata.tags %}
+{% for tag in metadata.tags %}
+<meta property="article:tag" content="{{ tag }}">
+{% endfor %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<article class="post-article">
+    <header class="post-header">
+        <div class="post-header-content">
+            <h1 class="post-title">{{ metadata.title }}</h1>
+            
+            <div class="post-meta">
+                {% if metadata.date %}
+                <time class="post-date" datetime="{{ metadata.date.strftime('%Y-%m-%d') }}">
+                    {{ metadata.date.strftime('%B %d, %Y') }}
+                </time>
+                {% endif %}
+                
+                {% if metadata.author %}
+                <span class="post-author">by {{ metadata.author }}</span>
+                {% endif %}
+                
+                {% if metadata.tags %}
+                <div class="post-tags">
+                    {% for tag in metadata.tags %}
+                    <span class="tag">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            
+            {% if metadata.description %}
+            <p class="post-description">{{ metadata.description }}</p>
+            {% endif %}
+        </div>
+        
+        {% if metadata.image %}
+        <div class="post-featured-image">
+            <img src="{{ metadata.image }}" alt="{{ metadata.title }}" loading="lazy">
+        </div>
+        {% endif %}
+    </header>
+    
+    <div class="post-content">
+        {{ content|safe }}
+    </div>
+    
+    <footer class="post-footer">
+        <div class="post-navigation">
+            <a href="/" class="back-to-home">← Back to all posts</a>
+        </div>
+        
+        <div class="post-share">
+            <h3>Share this post</h3>
+            <div class="share-buttons">
+                <a href="https://twitter.com/intent/tweet?text={{ metadata.title|urlencode }}&url={{ request.url|urlencode if request else '' }}" 
+                   target="_blank" rel="noopener" class="share-button twitter">
+                    Twitter
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.url|urlencode if request else '' }}" 
+                   target="_blank" rel="noopener" class="share-button facebook">
+                    Facebook
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ request.url|urlencode if request else '' }}" 
+                   target="_blank" rel="noopener" class="share-button linkedin">
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </footer>
+</article>
+{% endblock %} 
