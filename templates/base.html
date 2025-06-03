@@ -24,46 +24,48 @@
     <meta property="twitter:image" content="{% block twitter_image %}{{ self.og_image() }}{% endblock %}">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="static/favicon.ico">
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="/static/style.css">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/reset.css">
+    <link rel="stylesheet" href="static/style.css">
     
     {% block extra_head %}{% endblock %}
 </head>
 <body>
-    <header class="site-header">
-        <nav class="nav-container">
-            <div class="nav-brand">
-                <a href="/" class="brand-link">
-                    <h1>{{ site_title or "My Blog" }}</h1>
-                </a>
-            </div>
-            <div class="nav-links">
-                <a href="/" class="nav-link">Home</a>
-                <a href="/about.html" class="nav-link">About</a>
-            </div>
-        </nav>
+    <!-- Debug grid toggle -->
+    <div class="debug-grid"></div>
+    
+    <header class="header">
+        <table>
+            <tr>
+                <td class="width-auto">
+                    <h1><a href="index.html">{{ site_title or "My Blog" }}</a></h1>
+                </td>
+                <td class="width-min">
+                    <nav>
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                    </nav>
+                </td>
+            </tr>
+        </table>
     </header>
 
-    <main class="main-content">
+    <main>
         {% block content %}{% endblock %}
     </main>
 
-    <footer class="site-footer">
-        <div class="footer-container">
-            <p>&copy; 2024 {{ site_title or "My Blog" }}. Generated with ❤️ from Markdown.</p>
-            <div class="footer-links">
-                <a href="/sitemap.xml" class="footer-link">Sitemap</a>
-            </div>
-        </div>
+    <footer>
+        <hr>
+        <p>&copy; 2024 {{ site_title or "My Blog" }}. Generated from Markdown.</p>
+        
+        <label class="debug-toggle-label">
+            <input type="checkbox" class="debug-toggle"> Debug grid
+        </label>
     </footer>
 
+    <script src="static/index.js"></script>
     {% block extra_scripts %}{% endblock %}
 </body>
 </html> 

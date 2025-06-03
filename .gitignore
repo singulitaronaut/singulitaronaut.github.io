@@ -1,3 +1,6 @@
+# Generated blog output
+docs/
+
 # Python
 __pycache__/
 *.py[cod]
@@ -56,3 +59,4 @@ htmlcov/
 # Temporary files
 *.tmp
 *.temp
+.cache/

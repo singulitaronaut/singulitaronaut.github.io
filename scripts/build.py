@@ -55,6 +55,15 @@ class BlogGenerator:
             if os.path.exists(static_output):
                 shutil.rmtree(static_output)
             shutil.copytree(self.static_dir, static_output)
+        
+        # Also copy any CSS/JS files from docs/static if they exist (from monospace styling)
+        docs_static = os.path.join(self.output_dir, 'static')
+        if os.path.exists(docs_static):
+            # Copy additional files that might be in docs/static
+            for filename in ['reset.css', 'index.js']:
+                src_path = os.path.join(docs_static, filename)
+                if os.path.exists(src_path):
+                    print(f"Found existing {filename} in output directory")
     
     def parse_post(self, filepath):
         """Parse a markdown post with frontmatter."""

@@ -24,69 +24,52 @@
 {% endblock %}
 
 {% block content %}
-<article class="post-article">
-    <header class="post-header">
-        <div class="post-header-content">
-            <h1 class="post-title">{{ metadata.title }}</h1>
-            
-            <div class="post-meta">
-                {% if metadata.date %}
-                <time class="post-date" datetime="{{ metadata.date.strftime('%Y-%m-%d') }}">
-                    {{ metadata.date.strftime('%B %d, %Y') }}
-                </time>
-                {% endif %}
-                
-                {% if metadata.author %}
-                <span class="post-author">by {{ metadata.author }}</span>
-                {% endif %}
-                
-                {% if metadata.tags %}
-                <div class="post-tags">
-                    {% for tag in metadata.tags %}
-                    <span class="tag">{{ tag }}</span>
-                    {% endfor %}
-                </div>
-                {% endif %}
-            </div>
-            
-            {% if metadata.description %}
-            <p class="post-description">{{ metadata.description }}</p>
-            {% endif %}
-        </div>
-        
-        {% if metadata.image %}
-        <div class="post-featured-image">
-            <img src="{{ metadata.image }}" alt="{{ metadata.title }}" loading="lazy">
-        </div>
-        {% endif %}
-    </header>
+<article>
+    <h1>{{ metadata.title }}</h1>
     
-    <div class="post-content">
-        {{ content|safe }}
+    <div class="grid">
+        <p class="width-auto">
+            {% if metadata.date %}
+            <time datetime="{{ metadata.date.strftime('%Y-%m-%d') }}">
+                {{ metadata.date.strftime('%Y-%m-%d') }}
+            </time>
+            {% endif %}
+            
+            {% if metadata.author %}
+            · by {{ metadata.author }}
+            {% endif %}
+        </p>
+        
+        {% if metadata.tags %}
+        <p class="width-min">
+            Tags: 
+            {% for tag in metadata.tags %}
+                <code>{{ tag }}</code>{% if not loop.last %}, {% endif %}
+            {% endfor %}
+        </p>
+        {% endif %}
     </div>
     
-    <footer class="post-footer">
-        <div class="post-navigation">
-            <a href="/" class="back-to-home">← Back to all posts</a>
-        </div>
-        
-        <div class="post-share">
-            <h3>Share this post</h3>
-            <div class="share-buttons">
-                <a href="https://twitter.com/intent/tweet?text={{ metadata.title|urlencode }}&url={{ request.url|urlencode if request else '' }}" 
-                   target="_blank" rel="noopener" class="share-button twitter">
-                    Twitter
-                </a>
-                <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.url|urlencode if request else '' }}" 
-                   target="_blank" rel="noopener" class="share-button facebook">
-                    Facebook
-                </a>
-                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ request.url|urlencode if request else '' }}" 
-                   target="_blank" rel="noopener" class="share-button linkedin">
-                    LinkedIn
-                </a>
-            </div>
-        </div>
-    </footer>
+    {% if metadata.description %}
+    <p><em>{{ metadata.description }}</em></p>
+    {% endif %}
+    
+    {% if metadata.image %}
+    <figure>
+        <img src="{{ metadata.image }}" alt="{{ metadata.title }}" loading="lazy">
+        <figcaption>{{ metadata.title }}</figcaption>
+    </figure>
+    {% endif %}
+    
+    {{ content|safe }}
+    
+    <hr>
+    
+    <div class="grid">
+        <p class="width-auto"><a href="index.html">← Back to all posts</a></p>
+        <p class="width-min">
+            <button onclick="window.print()">Print</button>
+        </p>
+    </div>
 </article>
 {% endblock %} 

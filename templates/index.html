@@ -4,61 +4,50 @@
 {% block description %}{{ site_description or "A blog generated from markdown files" }}{% endblock %}
 
 {% block content %}
-<div class="hero-section">
-    <div class="hero-content">
-        <h1 class="hero-title">{{ site_title or "Welcome to My Blog" }}</h1>
-        <p class="hero-description">{{ site_description or "Thoughts, stories, and ideas from markdown files" }}</p>
-    </div>
-</div>
-
-<div class="posts-container">
-    {% if posts %}
-        <div class="posts-grid">
-            {% for post in posts %}
-            <article class="post-card">
-                <div class="post-card-content">
-                    {% if post.metadata.image %}
-                    <div class="post-image">
-                        <img src="{{ post.metadata.image }}" alt="{{ post.metadata.title }}" loading="lazy">
-                    </div>
-                    {% endif %}
-                    
-                    <div class="post-info">
-                        <h2 class="post-title">
-                            <a href="{{ post.metadata.url }}" class="post-link">{{ post.metadata.title }}</a>
-                        </h2>
-                        
-                        <div class="post-meta">
-                            <time class="post-date" datetime="{{ post.metadata.date.strftime('%Y-%m-%d') }}">
-                                {{ post.metadata.date.strftime('%B %d, %Y') }}
-                            </time>
-                            {% if post.metadata.author %}
-                            <span class="post-author">by {{ post.metadata.author }}</span>
-                            {% endif %}
-                        </div>
-                        
-                        <p class="post-excerpt">{{ post.metadata.description }}</p>
-                        
-                        {% if post.metadata.tags %}
-                        <div class="post-tags">
-                            {% for tag in post.metadata.tags %}
-                            <span class="tag">{{ tag }}</span>
-                            {% endfor %}
-                        </div>
-                        {% endif %}
-                        
-                        <a href="{{ post.metadata.url }}" class="read-more">Read more →</a>
-                    </div>
-                </div>
-            </article>
-            {% endfor %}
+{% if posts %}
+    {% for post in posts %}
+    <article>
+        <h2><a href="{{ post.metadata.url }}">{{ post.metadata.title }}</a></h2>
+        
+        <div class="grid">
+            <p class="width-auto">
+                <time datetime="{{ post.metadata.date.strftime('%Y-%m-%d') }}">
+                    {{ post.metadata.date.strftime('%Y-%m-%d') }}
+                </time>
+                {% if post.metadata.author %}
+                · by {{ post.metadata.author }}
+                {% endif %}
+            </p>
+            {% if post.metadata.tags %}
+            <p class="width-min">
+                Tags: 
+                {% for tag in post.metadata.tags %}
+                    <code>{{ tag }}</code>{% if not loop.last %}, {% endif %}
+                {% endfor %}
+            </p>
+            {% endif %}
         </div>
-    {% else %}
-        <div class="no-posts">
-            <h2>No posts yet</h2>
-            <p>Create your first post by adding a markdown file to the <code>posts/</code> directory!</p>
-            <div class="example-post">
-                <h3>Example post format:</h3>
+        
+        <p>{{ post.metadata.description }}</p>
+        
+        {% if post.metadata.image %}
+        <figure>
+            <img src="{{ post.metadata.image }}" alt="{{ post.metadata.title }}" loading="lazy">
+            <figcaption>{{ post.metadata.title }}</figcaption>
+        </figure>
+        {% endif %}
+    </article>
+    
+    {% if not loop.last %}<hr>{% endif %}
+    {% endfor %}
+{% else %}
+    <article>
+        <h2>No posts yet</h2>
+        <p>Create your first post by adding a markdown file to the <code>posts/</code> directory!</p>
+        
+        <details>
+            <summary>Example post format</summary>
+            <figure>
                 <pre><code>---
 title: My First Post
 description: This is my first blog post
@@ -70,8 +59,8 @@ tags: [hello, world]
 # Hello World
 
 This is the content of my first post!</code></pre>
-            </div>
-        </div>
-    {% endif %}
-</div>
+            </figure>
+        </details>
+    </article>
+{% endif %}
 {% endblock %} 
