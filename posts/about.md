@@ -1,46 +1,44 @@
 ---
-title: About This Blog
-description: Learn more about this markdown-powered blog and its creator
-date: 2024-01-01
-author: Blog Author
----
-
-# About This Blog
-
-Welcome to my corner of the internet! This blog is built using a custom static site generator that converts markdown files into beautiful HTML pages.
-
-## About the Technology
-
-This blog is powered by:
-
-- **Python** for the build script
-- **Jinja2** for HTML templating
-- **Markdown** for content creation
-- **GitHub Actions** for automated deployment
-- **GitHub Pages** for hosting
-
-## About Me
-
-I'm a developer passionate about creating simple, elegant solutions to complex problems. I believe in the power of automation and the beauty of well-crafted code.
-
-When I'm not coding, you can find me:
-- Reading about new technologies
-- Contributing to open source projects
-- Exploring the great outdoors
-- Enjoying a good cup of coffee ☕
-
-## Contact
-
-Feel free to reach out if you have any questions or just want to chat about technology!
-
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
-- Twitter: [@yourusername](https://twitter.com/yourusername)
-
-## This Blog's Source
-
-The source code for this blog is available on GitHub. Feel free to fork it and create your own markdown-powered blog!
-
----
-
-*Thanks for visiting!* 
+title: Welcome to Singulitaronaut
+description: Its five-year mission: to survive the advent of superintelligent AI
+date: 2025-06-05
+---                                   
+                                                                         
+                                                                         
+                          YXXYZYWWXYYYY                                  
+                    ZYX                  ZYZ                             
+                 YX     Z                    XY                          
+               W                                Y                        
+             X     Z                              Y                      
+           V     WUWWY                V           YYV                    
+         TS                  UTZ    V                WU                  
+       XY VTRTTTUUUUTTTSTUV       WVV                  V                 
+      ZTSSX                VSPTUV    YW                 T                
+      QXWYUUY          XUTYYVY  XUNVXYTXX              W W               
+      PV                      ZVWXX YUV YXT            X Y               
+     YV                            XVW RVW  X             Y              
+     V           ZX                  ZUZVRW   Z       W   X              
+                  YXWXWVXY             TYUXSZYSTZ WTZX    ZZ             
+    ZZ      W  W  Z  Z  ZY ZW          YU U SY   XWWXRW    V             
+    W       YY  ZYXVXYZVXY XY W        YY T TT  TYR  TVY   V             
+    Y      W ZZ ZXZ     TU Y W WZ      ZY W VVYZZX STZ VY  V             
+   X Z    YY W ZYY       WZYV W W     WZYV T PZ TSP NTYVY  V             
+   X Z    Y X Z  YW V     XYZ YYZY    ZZXV TPU VSY SZVTUY  X             
+   X Z   YZ Y Y        X   XYYYZZY    ZZYYTOUNRUYYT U WV  X              
+   X Z    Y Y X  Z       ZXZY WVZY     YV V YY WZW   WV   X              
+    YX     Z W YY         VYYXZ Y      XW U  YTVZYZTU    WY              
+    W      XZ WYYWZXXZZXWZ WW  Z      VW U V WSSL  Y ZVPRT               
+            YY  XYXWXXYXXWVYY     Y YU  V U T SY  ZX   WYVX              
+              YX   ZYYY          ZUVZ XW X SXTY  UUY X VU U              
+     Q            YUTSWVX     ZTVZ  WX   YTRZST   ZU ZWT  V              
+     TT        Y           VUV   YV    TXV  ZTQJST YW US  YW             
+      VWSSSUZ       XTSRSV    WVTRTTZU    XY     XTVWT XS YV             
+       QS                 UT   TV    Y XX      TW S   UOV  R             
+     XVSRZ    ZXWWXZ           QT  UV    XUY VS    ZSRUY S U             
+     UUZYRVXUW                  XVVVX  VVY      VSSTUY     TX            
+      RYZT   ZXUVUTUWXZZYYWWVRZ UTQQWR     VSTRTWT                       
+         SSSSWZ              Y TTXZ XQSSSTXYVXZ                          
+           YWTXWUUTSSTTTTSRQRSURSSRVTTWYZ                                
+                  YYZZZZZZZZZZZZ                                         
+                                                                         
+                                                                         
