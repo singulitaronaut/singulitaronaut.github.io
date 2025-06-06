@@ -31,9 +31,14 @@ jobs:
     - name: Build blog
       run: uv run scripts/build.py
         
+    - name: Add CNAME to docs
+      run: |
+        echo "singulitaronaut.com" > ./docs/CNAME
+        
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
+      uses: JamesIves/github-pages-deploy-action@v4
       if: github.ref == 'refs/heads/main'
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs 
+        folder: docs
+        branch: gh-pages
+        clean: true 
