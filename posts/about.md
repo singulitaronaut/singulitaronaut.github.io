@@ -1,8 +1,8 @@
 ---
 title: Welcome to Singulitaronaut
-description: Its five-year mission: to survive the advent of superintelligent AI
+description: "Its five-year mission: to survive the advent of superintelligent AI"
 date: 2025-06-05
----                                   
+---
                                                                          
                                                                          
                           YXXYZYWWXYYYY                                  
