@@ -60,7 +60,7 @@ class MonospaceGenerator:
         """Copy static files to output directory."""
         # Copy static files from static directory
         if os.path.exists(self.static_dir):
-            static_output = os.path.join(self.output_dir, 'src')
+            static_output = os.path.join(self.output_dir, 'static')
             if os.path.exists(static_output):
                 shutil.rmtree(static_output)
             shutil.copytree(self.static_dir, static_output)
