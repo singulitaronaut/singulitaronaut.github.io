@@ -3,8 +3,7 @@ title: Welcome to Singulitaronaut
 description: "Its five-year mission: to survive the advent of superintelligent AI"
 date: 2025-06-05
 ---
-                                                                         
-                                                                         
+<pre>
                           YXXYZYWWXYYYY                                  
                     ZYX                  ZYZ                             
                  YX     Z                    XY                          
@@ -40,5 +39,4 @@ date: 2025-06-05
          SSSSWZ              Y TTXZ XQSSSTXYVXZ                          
            YWTXWUUTSSTTTTSRQRSURSSRVTTWYZ                                
                   YYZZZZZZZZZZZZ                                         
-                                                                         
-                                                                         
+</pre> 
