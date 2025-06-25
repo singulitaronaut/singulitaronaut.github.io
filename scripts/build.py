@@ -43,10 +43,29 @@ class BlogGenerator:
         ])
     
     def clean_output_dir(self):
-        """Clean the output directory."""
+        """Clean the output directory while preserving CNAME file."""
+        cname_content = None
+        cname_path = os.path.join(self.output_dir, 'CNAME')
+        
+        # Preserve CNAME file if it exists
+        if os.path.exists(cname_path):
+            with open(cname_path, 'r', encoding='utf-8') as f:
+                cname_content = f.read()
+        
         if os.path.exists(self.output_dir):
             shutil.rmtree(self.output_dir)
         os.makedirs(self.output_dir, exist_ok=True)
+        
+        # Restore CNAME file or create it with default content
+        if cname_content is not None:
+            with open(cname_path, 'w', encoding='utf-8') as f:
+                f.write(cname_content)
+            print(f"Preserved CNAME file")
+        else:
+            # Create CNAME file with default domain
+            with open(cname_path, 'w', encoding='utf-8') as f:
+                f.write('singulitaronaut.com\n')
+            print(f"Created CNAME file with singulitaronaut.com")
     
     def copy_static_files(self):
         """Copy static files to output directory."""
