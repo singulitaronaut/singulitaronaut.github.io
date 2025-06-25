@@ -24,7 +24,7 @@ import json
 import re
 
 class BlogGenerator:
-    def __init__(self, posts_dir='posts', templates_dir='templates', output_dir='docs', static_dir='static'):
+    def __init__(self, posts_dir='posts', templates_dir='templates', output_dir='dist', static_dir='static'):
         self.posts_dir = posts_dir
         self.templates_dir = templates_dir
         self.output_dir = output_dir

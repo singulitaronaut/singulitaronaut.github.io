@@ -52,6 +52,9 @@ Thumbs.db
 .pytest_cache/
 .coverage
 htmlcov/
+.claude/
+.cursor/
+repomix-output.xml
 
 # Temporary files
 *.tmp
