@@ -6,7 +6,6 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/
@@ -52,6 +51,9 @@ Thumbs.db
 .pytest_cache/
 .coverage
 htmlcov/
+.claude/
+.cursor/
+repomix-output.xml
 
 # Temporary files
 *.tmp
