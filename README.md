@@ -23,13 +23,13 @@ A Python-powered Markdown blog based on [my Python replication](https://github.c
    uv run scripts/build.py
    ```
 
-6. Open `dist/index.html` in a web browser to preview the site.
+6. Open `docs/index.html` in a web browser to preview the site.
 
 ## Deployment to GitHub Pages
 
-A Github workflow is configured to automatically build the site in the `dist` folder and commit and push the built files to the remote whenever you push source file changes to `main`.
+A Github workflow is configured to automatically build the site in the `docs` folder and commit and push the built files to the remote whenever you push source file changes to `main`.
 
-You will need to enable GitHub Pages for your repository and configure Github Pages to serve the site from the `dist` folder on `main`. You can find these settings in the repository's `Settings > Pages > Build and deployment` section.
+You will need to enable GitHub Pages for your repository and configure Github Pages to serve the site from the `docs` folder on `main`. You can find these settings in the repository's `Settings > Pages > Build and deployment` section.
 
 ## Compatibility with Reprose
 
