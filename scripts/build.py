@@ -176,8 +176,8 @@ class BlogGenerator:
         
         html = template.render(
             posts=posts,
-            site_title="My Blog",
-            site_description="A blog generated from markdown files"
+            site_title="Singulitaronaut",
+            site_description="Navigating the exponential curve toward the Singularity"
         )
         
         output_path = os.path.join(self.output_dir, 'index.html')
@@ -188,7 +188,7 @@ class BlogGenerator:
     
     def generate_sitemap(self, posts):
         """Generate a sitemap.xml file."""
-        base_url = "https://yourusername.github.io/your-repo-name"  # Update this
+        base_url = "https://singulitaronaut.com"
         
         sitemap_content = ['<?xml version="1.0" encoding="UTF-8"?>']
         sitemap_content.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
