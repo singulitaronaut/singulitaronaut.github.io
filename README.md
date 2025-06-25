@@ -14,9 +14,9 @@ A Python-powered Markdown blog based on [my Python replication](https://github.c
    uv sync
    ```
 
-3. Edit your landing page in `pages/index.md`
+3. Edit your landing page in `posts/index.md`
 
-4. Edit your blog posts in `pages/blog/`
+4. Edit your blog posts in `posts/`
 
 5. Build the site:
    ```bash
