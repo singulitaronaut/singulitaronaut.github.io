@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ site_title or "My Blog" }}{% endblock %}</title>
+    <title>{% block title %}{{ site_title or "Singulitaronaut" }}{% endblock %}</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="{% block description %}{{ site_description or "A blog generated from markdown files" }}{% endblock %}">
+    <meta name="description" content="{% block description %}{{ site_description or "Navigating the exponential curve toward the Singularity" }}{% endblock %}">
     <meta name="author" content="{% block author %}{{ metadata.author if metadata else '' }}{% endblock %}">
     
     <!-- Open Graph / Facebook -->
@@ -40,12 +40,12 @@
         <table>
             <tr>
                 <td class="width-auto">
-                    <h1><a href="index.html">{{ site_title or "My Blog" }}</a></h1>
+                    <h1><a href="index.html">{{ site_title or "Singulitaronaut" }}</a></h1>
                 </td>
                 <td class="width-min">
                     <nav>
-                        <a href="index.html">Home</a>
-                        <a href="about.html">About</a>
+                        <a href="index.html">Posts</a>
+                        <a href="https://github.com/singulitaronaut/singulitaronaut.github.io/discussions">Discuss</a>
                     </nav>
                 </td>
             </tr>
@@ -58,7 +58,7 @@
 
     <footer>
         <hr>
-        <p>&copy; 2024 {{ site_title or "My Blog" }}. Generated from Markdown.</p>
+        <p>&copy; 2024 {{ site_title or "Singulitaronaut" }}. Voyaging toward the Singularity.</p>
         
         <label class="debug-toggle-label">
             <input type="checkbox" class="debug-toggle"> Debug grid
