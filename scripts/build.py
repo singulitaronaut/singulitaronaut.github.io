@@ -21,6 +21,7 @@ import frontmatter
 import markdown
 from jinja2 import Environment, FileSystemLoader
 import re
+from datetime import datetime
 
 class MonospaceGenerator:
     def __init__(self, input_dir='pages', templates_dir='templates', output_dir='dist', static_dir='static'):
@@ -72,11 +73,68 @@ class MonospaceGenerator:
                 dst_path = os.path.join(self.output_dir, item)
                 shutil.copy2(src_path, dst_path)
     
+    def parse_blog_posts(self):
+        """Parse all blog posts and return sorted list."""
+        blog_posts = []
+        
+        for filename in os.listdir(self.input_dir):
+            if not filename.endswith('.md') or filename == 'index.md':
+                continue
+                
+            input_file = os.path.join(self.input_dir, filename)
+            
+            with open(input_file, 'r', encoding='utf-8') as f:
+                post = frontmatter.load(f)
+            
+            # Extract date from filename (YYYY-MM-DD-title.md format) or metadata
+            date_str = post.metadata.get('date', '')
+            if not date_str and filename.count('-') >= 3:
+                # Try to extract date from filename
+                parts = filename.split('-')
+                if len(parts) >= 3:
+                    try:
+                        year, month, day = parts[0], parts[1], parts[2]
+                        date_str = f"{year}-{month}-{day}"
+                    except:
+                        date_str = ""
+            
+            # Parse date
+            post_date = None
+            if date_str and isinstance(date_str, str):
+                try:
+                    post_date = datetime.strptime(date_str, '%Y-%m-%d')
+                except:
+                    try:
+                        post_date = datetime.strptime(date_str, '%Y-%m-%d %H:%M:%S')
+                    except:
+                        post_date = None
+            
+            # Create blog post entry
+            post_slug = os.path.splitext(filename)[0]
+            blog_post = {
+                'title': post.metadata.get('title', post_slug.replace('-', ' ').title()),
+                'date': post_date,
+                'date_str': date_str,
+                'excerpt': post.metadata.get('excerpt', ''),
+                'slug': post_slug,
+                'filename': filename,
+                'content': post.content,
+                'metadata': post.metadata
+            }
+            blog_posts.append(blog_post)
+        
+        # Sort by date (newest first)
+        blog_posts.sort(key=lambda x: x['date'] if x['date'] else datetime.min, reverse=True)
+        return blog_posts
+
     def generate_monospace_web(self):
         """Generate the monospace web format from markdown files in the input directory."""
         if not os.path.exists(self.input_dir):
             print(f"Input directory {self.input_dir} not found")
             return
+        
+        # Parse blog posts first
+        blog_posts = self.parse_blog_posts()
         
         # Process each markdown file in the input directory
         for filename in os.listdir(self.input_dir):
@@ -146,16 +204,22 @@ class MonospaceGenerator:
             # Get the monospace template
             template = self.env.get_template('index.html')
             
+            # For index.md, pass blog_posts data
+            template_data = {
+                'title': post.metadata.get('title', 'The Monospace Web'),
+                'subtitle': post.metadata.get('subtitle', ''),
+                'author': post.metadata.get('author', ''),
+                'author_url': post.metadata.get('author-url', ''),
+                'toc_title': post.metadata.get('toc-title', 'Contents'),
+                'toc': toc,
+                'content': html_content
+            }
+            
+            if filename == 'index.md':
+                template_data['blog_posts'] = blog_posts
+            
             # Render the HTML
-            html = template.render(
-                title=post.metadata.get('title', 'The Monospace Web'),
-                subtitle=post.metadata.get('subtitle', ''),
-                author=post.metadata.get('author', ''),
-                author_url=post.metadata.get('author-url', ''),
-                toc_title=post.metadata.get('toc-title', 'Contents'),
-                toc=toc,
-                content=html_content
-            )
+            html = template.render(**template_data)
             
             # Write the HTML file
             output_filename = os.path.splitext(filename)[0] + '.html'

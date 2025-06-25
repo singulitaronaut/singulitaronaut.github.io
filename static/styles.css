@@ -86,6 +86,11 @@ h2 {
   text-transform: uppercase;
 }
 
+/* Fix margin collapse when headings follow horizontal rules */
+hr + h1, hr + h2, hr + h3, hr + h4, hr + h5, hr + h6 {
+  margin-top: calc(var(--line-height) * 0.5);
+}
+
 hr {
   position: relative;
   display: block;

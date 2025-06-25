@@ -1,7 +1,6 @@
-# The Monospace Web (Python Edition)
+# The Monospace Blog
 
-A Python-powered replication of [The Monospace Web](https://github.com/owickstrom/the-monospace-web) by Oskar Wickström. 
-Where the original uses Nix, Pandoc, and Make, this version uses Python, Jinja2, and duct tape.
+A Python-powered Markdown blog based on [my Python replication](https://github.com/chriscarrollsmith/monospace-web-python) of [The Monospace Web](https://github.com/owickstrom/the-monospace-web) by Oskar Wickström. 
 
 ## Quick Start
 
@@ -15,21 +14,31 @@ Where the original uses Nix, Pandoc, and Make, this version uses Python, Jinja2,
    uv sync
    ```
 
-3. Edit your markdown in `pages/index.md`
+3. Edit your landing page in `pages/index.md`
 
-4. Build the site:
+4. Edit your blog posts in `pages/blog/`
+
+5. Build the site:
    ```bash
    uv run scripts/build.py
    ```
 
-The generated site will be in the `dist` directory.
+6. Open `dist/index.html` in a web browser to preview the site.
 
-## Development
+## Deployment to GitHub Pages
 
-To run the tests:
-```bash
-uv run tests/test_replication.py
-```
+A Github workflow is configured to automatically build the site in the `dist` folder and commit and push the built files to the remote whenever you push source file changes to `main`.
+
+You will need to enable GitHub Pages for your repository and configure Github Pages to serve the site from the `dist` folder on `main`. You can find these settings in the repository's `Settings > Pages > Build and deployment` section.
+
+## Compatibility with Reprose
+
+This blog generator is designed to work seamlessly with [Reprose](https://repose.pp.ua), an online markdown editor that integrates with GitHub. You can:
+
+1. Write and edit posts directly in Reprose's online editor
+2. Push changes to your repository with a button-click
+3. Watch as GitHub Actions automatically builds and deploys your blog
+4. The frontmatter format is fully compatible with Reprose's standard fields (title, description, date) and supports any additional custom fields you want to add.
 
 ## License
 
