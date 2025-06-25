@@ -52,8 +52,8 @@ Thumbs.db
 .coverage
 htmlcov/
 .claude/
-.cursor/
 repomix-output.xml
+artifacts/
 
 # Temporary files
 *.tmp
