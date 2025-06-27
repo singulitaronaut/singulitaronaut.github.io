@@ -73,6 +73,19 @@ class BlogGenerator:
         # Convert markdown content to HTML
         html_content = self.md.convert(post.content)
         
+        # Normalize video elements to match reference format
+        def normalize_video(match):
+            alt = match.group(1)
+            src = match.group(2)
+            return f'<figure><video src="{src}" controls=""><a href="{src}">{alt}</a></video><figcaption aria-hidden="true"><a href="{src}">{alt}</a></figcaption></figure>'
+        
+        # Match video elements with various attributes and content
+        html_content = re.sub(
+            r'<p><video[^>]*alt="([^"]*)"[^>]*controls="controls"[^>]*>.*?<source[^>]*src="([^"]*)"[^>]*>.*?</video></p>', 
+            normalize_video, 
+            html_content
+        )
+        
         # Extract metadata
         metadata = post.metadata.copy()
         
