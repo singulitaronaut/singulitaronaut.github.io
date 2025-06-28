@@ -29,6 +29,7 @@ Most human-AI setups are still boss-and-tool. Human sets the goal, AI executes, 
 Researchers at Georgia Tech are flipping the script. Their human-AI tournaments reward teams, not solo agents. The goal: build AIs that anticipate, adapt, and collaborate.
 
 Imagine:
+
 - **Science:** Human curiosity meets AI's pattern-hunting. Neither cracks the code alone.
 - **Art:** Human emotion, AI iteration. The result: creative leaps.
 - **Policy:** Human values, AI modeling. Smarter, more grounded decisions.
@@ -63,14 +64,17 @@ The future isn't human *versus* artificial. It's human *with* artificial. That's
 ## Sources
 
 **Dolly Parton's Programs:**
+
 - The Dollywood Foundation. "About The Dollywood Foundation." [https://imaginationlibrary.com/the-dollywood-foundation/](https://imaginationlibrary.com/the-dollywood-foundation/)
 - Mocioiu, Raye. "The Dolly Parton Effect: Spreading the Love of Literacy." Global Heroes Magazine, 2024. [https://www.globalheroes.com/dolly-parton-imagination-library/](https://www.globalheroes.com/dolly-parton-imagination-library/)
 
 **Human-AI Collaboration Research:**
+
 - MacLellan, Christopher, et al. "Designing the Future of Teamwork: Human-AI Collaboration Takes Center Stage in New Competition." Georgia Tech Neuro Next Initiative, 2025. [https://neuro.gatech.edu/designing-future-teamwork-human-ai-collaboration-takes-center-stage-new-competition](https://neuro.gatech.edu/designing-future-teamwork-human-ai-collaboration-takes-center-stage-new-competition)
 - Wu, Ju, and Calvin K.L. Or. "Position Paper: Towards Open Complex Human-AI Agents Collaboration System for Problem-Solving and Knowledge Management." arXiv preprint arXiv:2505.00018, 2025. [https://arxiv.org/abs/2505.00018](https://arxiv.org/abs/2505.00018)
 
 **Buddy System Research:**
+
 - Schrøder, Katja, et al. "Evaluation of 'the Buddy Study', a peer support program for second victims in healthcare: a survey in two Danish hospital departments." BMC Health Services Research 22, no. 566 (2022). [https://bmchealthservres.biomedcentral.com/articles/10.1186/s12913-022-07973-9](https://bmchealthservres.biomedcentral.com/articles/10.1186/s12913-022-07973-9)
 - Frasier, Kelly M., et al. "The Psychology Behind the Efficacy of a Buddy System for Enhancing Retention in Dermatological Clinical Trials." Cureus 16, no. 11 (2024): e72986. [https://pmc.ncbi.nlm.nih.gov/articles/PMC11617496/](https://pmc.ncbi.nlm.nih.gov/articles/PMC11617496/)
 - May, Sylvia, et al. "Randomized controlled trial of a social support ('buddy') intervention for smoking cessation." Patient Education and Counseling 64, no. 1-3 (2006): 235-41. [https://pubmed.ncbi.nlm.nih.gov/16616450/](https://pubmed.ncbi.nlm.nih.gov/16616450/)

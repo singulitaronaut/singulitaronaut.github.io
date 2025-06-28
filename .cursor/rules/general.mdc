@@ -29,6 +29,14 @@ tags: [mechanistic interpretability, zero-knowledge proofs, sociopolitical inter
 ---
 ```
 
+When writing Markdown, remember to keep a blank line between block elements or the Markdown parser may treat them as part of the same paragraph. For example, the following would be misrendered: 
+
+```markdown
+**Bolded Label:**
+- List item.
+- List item.
+```
+
 In addition to regular Markdown formatting, your blogging platform also supports the following:
 
 - You may wrap unordered lists in `<div class="tree"></div>` to create a tree diagram.
