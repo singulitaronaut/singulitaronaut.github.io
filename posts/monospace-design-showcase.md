@@ -178,6 +178,17 @@ print(f"Line height: {grid['vertical_rhythm']}")
 }
 ```
 
+## Whitespace
+
+Need to keep every space in place? Wrap your text content in a `<pre>` element. This tag preserves all whitespace—ideal for ASCII art, log excerpts, or command-line output. Because the design system already uses a monospace font, the characters inside `<pre>` line up perfectly with the underlying grid:
+
+<pre>
+      |\      _,,,---,,_
+ZZZzz /,`.-'`'    -.  ;-;;,_
+     |,4-  ) )-,_. ,\ (  `'-'
+    '---''(_/--'  `-'\_)  Credit: Felix Lee
+</pre>
+
 ## Images and Figures
 
 <figure>
