@@ -1,5 +1,15 @@
 # The Monospace Blog
 
+<img src="screenshot.png" alt="Monospace Blog Screenshot" width="400" align="right" style="margin-left: 20px; margin-bottom: 20px; max-width: 50%; height: auto;">
+
+<style>
+@media (max-width: 499px) {
+  img[src="screenshot.png"] {
+    max-width: 100% !important;
+  }
+}
+</style>
+
 A Python-powered Markdown blog based on [my Python replication](https://github.com/chriscarrollsmith/monospace-web-python) of [The Monospace Web](https://github.com/owickstrom/the-monospace-web) by Oskar Wickström. 
 
 ## Quick Start
@@ -24,6 +34,11 @@ A Python-powered Markdown blog based on [my Python replication](https://github.c
    ```
 
 6. Open `docs/index.html` in a web browser to preview the site.
+
+7. (Optional) Generate a fresh screenshot for documentation:
+   ```bash
+   uv run scripts/screenshot.py
+   ```
 
 ## Deployment to GitHub Pages
 

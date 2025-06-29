@@ -1,14 +1,3 @@
-#!/usr/bin/env python3
-# /// script
-# requires-python = ">=3.12"
-# dependencies = [
-#     "jinja2",
-#     "pillow",
-#     "python-frontmatter",
-#     "pyyaml",
-#     "mistletoe",
-# ]
-# ///
 """
 Markdown Blog Generator
 Converts markdown files with YAML frontmatter to HTML using Jinja2 templates.
@@ -16,8 +5,8 @@ Converts markdown files with YAML frontmatter to HTML using Jinja2 templates.
 
 import os
 import shutil
-import frontmatter  # type: ignore
-import mistletoe  # type: ignore
+import frontmatter
+import mistletoe
 from jinja2 import Environment, FileSystemLoader
 from datetime import datetime
 import re

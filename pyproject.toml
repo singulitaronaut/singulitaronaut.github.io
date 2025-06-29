@@ -1,7 +1,7 @@
 [project]
-name = "markdown-blog"
+name = "monospace-blog"
 version = "1.0.0"
-description = "A static blog generator that converts markdown files with YAML frontmatter into beautiful HTML"
+description = "A static blog generator that converts markdown files with YAML frontmatter into beautiful HTML with a monospace theme"
 authors = [
     {name = "Christopher C. Smith", email = "christopher.smith@promptlytechnologies.com"}
 ]
@@ -16,8 +16,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://christophercarrollsmith/monospace-web-python"
-Repository = "https://github.com/chriscarrollsmith/monospace-web-python"
+Homepage = "https://christophercarrollsmith/monospace-blog"
+Repository = "https://github.com/chriscarrollsmith/monospace-blog"
 
 [tool.uv]
-dev-dependencies = [] 
+dev-dependencies = [
+    "playwright>=1.53.0",
+] 
