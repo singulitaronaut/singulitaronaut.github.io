@@ -1,8 +1,8 @@
 # The Monospace Blog
 
-![Monospace Blog Screenshot](screenshot.png)
+A Python-powered Markdown blog based on [my Python replication](https://github.com/chriscarrollsmith/monospace-web-python) of [The Monospace Web](https://github.com/owickstrom/the-monospace-web) by Oskar Wickström.
 
-A Python-powered Markdown blog based on [my Python replication](https://github.com/chriscarrollsmith/monospace-web-python) of [The Monospace Web](https://github.com/owickstrom/the-monospace-web) by Oskar Wickström. 
+![Monospace Blog Screenshot](screenshot.png)
 
 ## Quick Start
 
