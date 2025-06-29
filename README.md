@@ -40,6 +40,67 @@ This blog generator is designed to work seamlessly with [Reprose](https://repose
 3. Watch as GitHub Actions automatically builds and deploys your blog
 4. The frontmatter format is fully compatible with Reprose's standard fields (title, description, date) and supports any additional custom fields you want to add.
 
+## SEO Frontmatter Fields
+
+This blog generator includes comprehensive SEO support through YAML frontmatter fields. You provide the title, description, date, and tags in a frontmatter section at the top of your Markdown post, and the build script will automatically generate HTML page metadata, social graph tags, and a sitemap.
+
+### Example Frontmatter
+
+```yaml
+---
+title: My Awesome Blog Post
+description: A detailed guide to writing great content with SEO optimization
+date: 2024-01-15
+author: Your Name
+tags: [blogging, seo, markdown]
+image: https://example.com/featured-image.jpg
+---
+```
+
+### Supported fields:
+
+#### Required Fields
+
+- **`title`** - Post title (used for page title, Open Graph title, Twitter title)
+- **`description`** - Brief post description (used for meta description, Open Graph description, Twitter description)
+- **`date`** - Publication date in YYYY-MM-DD format (used for article:published_time meta tag)
+
+#### Optional SEO Fields
+
+- **`author`** - Author name (used for meta author and article:author tags)
+- **`image`** - Featured image URL (used for Open Graph image and Twitter Card image)
+- **`tags`** - Array of tags (e.g., `[tag1, tag2, tag3]`) (used for article:tag meta tags)
+- **`draft`** - Set to `true` to exclude post from build
+
+#### Auto-generated Fields
+
+The build script automatically generates:
+
+- **`slug`** - URL-friendly version of the filename
+- **`url`** - Final HTML filename (`{slug}.html`)
+
+## A note on Markdown style
+
+`python-markdown` strictly complies with the Markdown spec, so it's essential to write well-formed Markdown. In particular, make sure to separate block-level elements from each other with a blank line. Thus:
+
+``` markdown
+**Don't do this**
+- List item will be incorrectly concatenated in `<p>` with list title
+```
+
+``` markdown
+**Do this instead**
+
+- List item will be correctly formatted as `<ul>`
+```
+
+Also, make sure to use four spaces rather than two for indenting nested list items:
+
+``` markdown
+- First level
+    - Second level
+```
+
 ## License
 
 MIT License - see [LICENSE](LICENSE) for details.

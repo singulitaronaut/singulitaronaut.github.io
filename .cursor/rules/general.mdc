@@ -3,6 +3,10 @@ description:
 globs: 
 alwaysApply: true
 ---
+## Programming philosophy
+
+Keep commits atomic. Always make the smallest code changes that will achieve your goals.
+
 ## Resolving Github issues
 
 If asked to resolve a Github issue, check if you're already on an issue branch with `git branch -v`. If not, check if an issue branch already exists with `git branch -r`.
@@ -29,6 +33,24 @@ Always write type-annotated Python code that will pass a `mypy` check.
 
 Avoid introducing new named CSS classes. This project is themed, and the theme should mostly be controlled by element selectors rather than class or id selectors.
 
-## Programming philosophy
+## Markdown style
 
-Keep commits atomic. Always make the smallest code changes that will achieve your goals.
+`python-markdown` strictly complies with the `markdown.pl` spec, so it's essential to write well-formed Markdown. In particular, make sure to separate block-level elements from each other with a blank line. Thus:
+
+``` markdown
+**Don't do this**
+- List item will be incorrectly concatenated in `<p>` with list title
+```
+
+``` markdown
+**Do this instead**
+
+- List item will be correctly formatted as `<ul>`
+```
+
+Also, make sure to use four spaces rather than two for indenting nested list items:
+
+``` markdown
+- First level
+    - Second level
+```

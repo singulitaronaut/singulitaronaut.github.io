@@ -133,16 +133,16 @@ Ordered lists use automatic numbering:
 
 1. First item
 2. Second item
-   1. Nested item
-   2. Another nested item
+    1. Nested item
+    2. Another nested item
 3. Third item
 
 Unordered lists use square bullets:
 
 - First point
 - Second point
-  - Nested point
-  - Another nested point
+    - Nested point
+    - Another nested point
 - Third point
 
 ## Code Blocks
