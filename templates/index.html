@@ -36,6 +36,8 @@
             <figcaption>{{ post.metadata.title }}</figcaption>
         </figure>
         {% endif %}
+        
+        <p><a href="{{ post.metadata.url }}">Read more →</a></p>
     </article>
     
     {% if not loop.last %}<hr>{% endif %}
