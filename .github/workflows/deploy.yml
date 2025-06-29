@@ -23,7 +23,7 @@ jobs:
         version: "latest"
         
     - name: Install dependencies
-      run: uv sync && playwright install
+      run: uv sync && uv run playwright install
         
     - name: Build blog and regenerate screenshot
       run: uv run scripts/build.py && uv run scripts/screenshot.py
