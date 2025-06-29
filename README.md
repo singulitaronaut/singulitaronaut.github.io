@@ -41,6 +41,7 @@ date: 2024-01-15
 author: Your Name
 tags: [blogging, seo, markdown]
 image: https://example.com/featured-image.jpg
+caption: A caption for the featured image
 ---
 ```
 

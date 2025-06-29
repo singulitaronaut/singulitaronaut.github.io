@@ -26,6 +26,10 @@
 {% block content %}
 <article>
     <h1>{{ metadata.title }}</h1>
+
+    {% if metadata.description %}
+    <p><em>{{ metadata.description }}</em></p>
+    {% endif %}
     
     <div class="grid">
         <p class="width-auto">
@@ -49,10 +53,6 @@
         </p>
         {% endif %}
     </div>
-    
-    {% if metadata.description %}
-    <p><em>{{ metadata.description }}</em></p>
-    {% endif %}
     
     {% if metadata.image %}
     <figure>

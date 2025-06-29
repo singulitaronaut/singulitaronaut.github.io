@@ -246,7 +246,7 @@ figure {
 figcaption {
   display: block;
   font-style: italic;
-  margin-top: var(--line-height);
+  margin-top: 0;
 }
 
 ul, ol {

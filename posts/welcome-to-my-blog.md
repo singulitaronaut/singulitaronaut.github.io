@@ -5,28 +5,12 @@ date: 2024-01-15
 author: Blog Author
 tags: [welcome, markdown, github-actions, blogging]
 image: https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Adams_The_Tetons_and_the_Snake_River.jpg/640px-Adams_The_Tetons_and_the_Snake_River.jpg
+caption: The Tetons and the Snake River
 ---
 
 # Welcome to My Markdown Blog
 
 Hello and welcome to my new blog! This is a demonstration of a static blog generator that converts markdown files with YAML frontmatter into beautiful HTML pages using a clean monospace design.
-
-<div class="tree">
-  <ul>
-    <li>How It Works</li>
-    <li>Writing Posts</li>
-    <li>Features
-      <ul>
-        <li>Responsive Design</li>
-        <li>Typography</li>
-        <li>SEO Optimization</li>
-        <li>Debug Tools</li>
-      </ul>
-    </li>
-    <li>Customization</li>
-    <li>Getting Started</li>
-  </ul>
-</div>
 
 ## How It Works
 

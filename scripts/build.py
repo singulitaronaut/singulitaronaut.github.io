@@ -11,6 +11,7 @@ from jinja2 import Environment, FileSystemLoader
 from datetime import datetime
 import re
 
+
 class BlogGenerator:
     def __init__(self, posts_dir='posts', templates_dir='templates', output_dir='docs', static_dir='static'):
         self.posts_dir = posts_dir

@@ -33,7 +33,9 @@
         {% if post.metadata.image %}
         <figure>
             <img src="{{ post.metadata.image }}" alt="{{ post.metadata.title }}" loading="lazy">
-            <figcaption>{{ post.metadata.title }}</figcaption>
+            {% if post.metadata.caption %}
+            <figcaption>{{ post.metadata.caption }}</figcaption>
+            {% endif %}
         </figure>
         {% endif %}
         
