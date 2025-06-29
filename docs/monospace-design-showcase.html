@@ -115,43 +115,44 @@
 <h2>Grid System</h2>
 <p>The <code>.grid</code> class creates a flexible layout system that automatically calculates column widths:</p>
 <div class="grid">
-  <p class="width-auto">This paragraph takes up most of the available space using <code>width-auto</code></p>
-  <p class="width-min">Minimal space with <code>width-min</code></p>
-</div>
-<div class="grid">
-  <p>Equal</p>
-  <p>Width</p>
-  <p>Columns</p>
-</div>
-<div class="grid">
-  <button>Button 1</button>
-  <button>Button 2</button>
-  <button>Button 3</button>
-  <button>Button 4</button>
+<p>Defaults to equal widths.</p>
+<p>Still maintains the grid.</p>
 </div>
 <h2>Tree Structure</h2>
-<p>Perfect for showing hierarchical information with connecting lines:</p>
+<p>The <code>.tree</code> class creates a tree structure with connecting lines:</p>
 <div class="tree">
-  <ul>
-    <li>Root Level
-      <ul>
-        <li>Child Item 1</li>
-        <li>Child Item 2
-          <ul>
-            <li>Grandchild A</li>
-            <li>Grandchild B</li>
-          </ul>
-        </li>
-        <li>Child Item 3</li>
-      </ul>
-    </li>
-    <li>Another Root Item
-      <ul>
-        <li>Different Child</li>
-      </ul>
-    </li>
-  </ul>
+<ul>
+<li>Root Level
+<ul>
+<li>Child Item 1</li>
+<li>Child Item 2
+<ul>
+<li>Grandchild A</li>
+<li>Grandchild B</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Another Root Item</li>
+</ul>
 </div>
+<h2>Using Tree and Grid Classes in Markdown</h2>
+<p>If you want to apply <code>tree</code> or <code>grid</code> classes to a section, the most reliable approach is to use HTML <code>div</code> tags around the content. The Markdown processor will still parse Markdown inside HTML blocks <em>as long as you allow a blank line between the HTML tags and the Markdown content</em>:</p>
+<pre><code class="language-html">&lt;div class="grid"&gt;
+
+This is **still Markdown** that will be processed.
+
+- Lists work
+- *Emphasis* works
+- [Links](http://example.com) work
+
+&lt;/div&gt;
+</code></pre>
+<p>However, it will not work without the blank lines!</p>
+<pre><code class="language-html">&lt;div class="tree"&gt;
+This will be treated as HTML, so **emphasis** and other Markdown will be rendered as plain text.
+&lt;/div&gt;
+</code></pre>
 <h2>Tables</h2>
 <p>Tables are styled with clean borders and proper grid alignment:</p>
 <table>

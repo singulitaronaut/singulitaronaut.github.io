@@ -15,48 +15,51 @@ This post demonstrates the various utility classes and components available in o
 The `.grid` class creates a flexible layout system that automatically calculates column widths:
 
 <div class="grid">
-  <p class="width-auto">This paragraph takes up most of the available space using <code>width-auto</code></p>
-  <p class="width-min">Minimal space with <code>width-min</code></p>
-</div>
 
-<div class="grid">
-  <p>Equal</p>
-  <p>Width</p>
-  <p>Columns</p>
-</div>
+  Defaults to equal widths.
 
-<div class="grid">
-  <button>Button 1</button>
-  <button>Button 2</button>
-  <button>Button 3</button>
-  <button>Button 4</button>
+  Still maintains the grid.
+
 </div>
 
 ## Tree Structure
 
-Perfect for showing hierarchical information with connecting lines:
+The `.tree` class creates a tree structure with connecting lines:
 
 <div class="tree">
-  <ul>
-    <li>Root Level
-      <ul>
-        <li>Child Item 1</li>
-        <li>Child Item 2
-          <ul>
-            <li>Grandchild A</li>
-            <li>Grandchild B</li>
-          </ul>
-        </li>
-        <li>Child Item 3</li>
-      </ul>
-    </li>
-    <li>Another Root Item
-      <ul>
-        <li>Different Child</li>
-      </ul>
-    </li>
-  </ul>
+
+- Root Level
+  - Child Item 1
+  - Child Item 2
+    - Grandchild A
+    - Grandchild B
+- Another Root Item
+
 </div>
+
+## Using Tree and Grid Classes in Markdown
+
+If you want to apply `tree` or `grid` classes to a section, the most reliable approach is to use HTML `div` tags around the content. The Markdown processor will still parse Markdown inside HTML blocks *as long as you allow a blank line between the HTML tags and the Markdown content*:
+
+```html
+<div class="grid">
+
+This is **still Markdown** that will be processed.
+
+- Lists work
+- *Emphasis* works
+- [Links](http://example.com) work
+
+</div>
+```
+
+However, it will not work without the blank lines!
+
+```html
+<div class="tree">
+This will be treated as HTML, so **emphasis** and other Markdown will be rendered as plain text.
+</div>
+```
 
 ## Tables
 
