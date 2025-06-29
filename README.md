@@ -4,34 +4,19 @@ A Python-powered Markdown blog based on [my Python replication](https://github.c
 
 ![Monospace Blog Screenshot](screenshot.png)
 
-## Quick Start
-
-1. Install [uv](https://docs.astral.sh/uv/getting-started/installation/):
-   ```bash
-   curl -LsSf https://astral.sh/uv/install.sh | sh
-   ```
-
-2. Install Python 3.13+ and other dependencies with uv:
-   ```bash
-   uv sync
-   ```
-
-3. Edit your landing page in `posts/index.md`
-
-4. Edit your blog posts in `posts/`
-
-5. Build the site:
-   ```bash
-   uv run scripts/build.py
-   ```
-
-6. Open `docs/index.html` in a web browser to preview the site.
-
-## Deployment to GitHub Pages
+## Using the Monospace Blog
 
 A Github workflow is configured to automatically build the site in the `docs` folder and commit and push the built files to the remote whenever you push source file changes to `main`.
 
-You will need to enable GitHub Pages for your repository and configure Github Pages to serve the site from the `docs` folder on `main`. You can find these settings in the repository's `Settings > Pages > Build and deployment` section.
+To get started, you will need to:
+
+1. Fork the repository
+
+2. Edit `templates/base.html` and `templates/index.html` to customize the landing page
+
+3. Enable GitHub Pages for your repository and configure Github Pages to serve the site from the `docs` folder on `main`. You can find these settings in your fork's `Settings > Pages > Build and deployment` section.
+
+4. Add or edit markdown files in the `posts/` folder to publish blog posts to Github Pages
 
 ## Compatibility with Reprose
 
@@ -84,6 +69,36 @@ The build script automatically generates:
 ## A note on Markdown style
 
 This project's markdown renderer uses the [CommonMark specification](https://commonmark.org/). CommonMark offers a helpful 60-second [tutorial](https://commonmark.org/help/) that you may find helpful if you're new to Markdown.
+
+## Development
+
+1. Clone this repository:
+
+   ```bash
+   git clone https://github.com/chriscarrollsmith/monospace-blog.git
+   ```
+
+2. Install [uv](https://docs.astral.sh/uv/getting-started/installation/):
+
+   ```bash
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+   ```
+
+3. Install Python 3.13+ and other dependencies with uv:
+   ```bash
+   uv sync
+   ```
+
+4. Edit templates in `templates/`
+
+5. Edit blog posts in `posts/`
+
+6. Build the site:
+   ```bash
+   uv run scripts/build.py
+   ```
+
+7. Open `docs/index.html` in a web browser to preview the site.
 
 ## License
 
