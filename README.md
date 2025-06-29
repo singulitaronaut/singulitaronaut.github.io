@@ -27,11 +27,6 @@ A Python-powered Markdown blog based on [my Python replication](https://github.c
 
 6. Open `docs/index.html` in a web browser to preview the site.
 
-7. (Optional) Generate a fresh screenshot for documentation:
-   ```bash
-   uv run scripts/screenshot.py
-   ```
-
 ## Deployment to GitHub Pages
 
 A Github workflow is configured to automatically build the site in the `docs` folder and commit and push the built files to the remote whenever you push source file changes to `main`.
