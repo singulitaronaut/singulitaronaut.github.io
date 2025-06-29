@@ -201,22 +201,28 @@ details {
 summary {
   font-weight: var(--font-weight-medium);
   cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding-left: calc(1ch + 1ch);
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+summary::marker {
+  display: none;
+}
+summary::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  width: 1ch;
+}
+details[open] summary::before {
+  content: '▼';
+  width: 1ch;
 }
 details[open] summary {
   margin-bottom: var(--line-height);
-}
-
-details ::marker {
-  display: inline-block;
-  content: '▶';
-  margin: 0;
-}
-details[open] ::marker {
-  content: '▼';
-}
-
-details :last-child {
-  margin-bottom: 0;
 }
 
 pre {
