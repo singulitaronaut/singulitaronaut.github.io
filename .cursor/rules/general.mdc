@@ -32,27 +32,3 @@ Always write type-annotated Python code that will pass a `mypy` check.
 ## HTML templating patterns
 
 Avoid introducing new named CSS classes. This project is themed, and the theme should mostly be controlled by element selectors rather than class or id selectors.
-
-## Markdown style
-
-`commonmark` follows the CommonMark specification, which is more permissive than the original markdown.pl spec. This allows for more flexible formatting, such as no blank line between headers and lists, and supports both two-space and four-space indentation for nested lists.
-
-``` markdown
-**You can now do this**
-- List item can be directly after a header without a blank line
-```
-
-``` markdown
-**This still works too**
-
-- List item with blank line separation
-```
-
-Both two-space and four-space indentation work for nested lists:
-
-``` markdown
-- First level
-  - Second level (two spaces)
-- First level
-    - Second level (four spaces)
-```

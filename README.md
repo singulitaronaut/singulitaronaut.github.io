@@ -81,27 +81,7 @@ The build script automatically generates:
 
 ## A note on Markdown style
 
-`commonmark` follows the CommonMark specification, which is more permissive than the original markdown.pl spec. This allows for more flexible formatting, such as no blank line between headers and lists, and supports both two-space and four-space indentation for nested lists.
-
-``` markdown
-**You can now do this**
-- List item can be directly after a header without a blank line
-```
-
-``` markdown
-**This still works too**
-
-- List item with blank line separation
-```
-
-Both two-space and four-space indentation work for nested lists:
-
-``` markdown
-- First level
-  - Second level (two spaces)
-- First level
-    - Second level (four spaces)
-```
+This project's markdown renderer uses the [CommonMark specification](https://commonmark.org/). CommonMark offers a helpful 60-second [tutorial](https://commonmark.org/help/) that you may find helpful if you're new to Markdown.
 
 ## License
 
