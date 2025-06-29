@@ -154,12 +154,37 @@
 </div>
 <h2>Tables</h2>
 <p>Tables are styled with clean borders and proper grid alignment:</p>
-<p>| Feature | Description | Status |
-|---------|-------------|--------|
-| Grid System | Flexible layout | ✓ Complete |
-| Typography | Baseline grid | ✓ Complete |
-| Dark Mode | Auto-switching | ✓ Complete |
-| Debug Tools | Grid overlay | ✓ Complete |</p>
+<table>
+<thead>
+<tr>
+<th align="left">Feature</th>
+<th align="left">Description</th>
+<th align="left">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Grid System</td>
+<td align="left">Flexible layout</td>
+<td align="left">✓ Complete</td>
+</tr>
+<tr>
+<td align="left">Typography</td>
+<td align="left">Baseline grid</td>
+<td align="left">✓ Complete</td>
+</tr>
+<tr>
+<td align="left">Dark Mode</td>
+<td align="left">Auto-switching</td>
+<td align="left">✓ Complete</td>
+</tr>
+<tr>
+<td align="left">Debug Tools</td>
+<td align="left">Grid overlay</td>
+<td align="left">✓ Complete</td>
+</tr>
+</tbody>
+</table>
 <h2>Interactive Elements</h2>
 <h3>Collapsible Details</h3>
 <details>
@@ -232,23 +257,23 @@
 </ul>
 <h2>Code Blocks</h2>
 <pre><code class="language-python">def calculate_grid():
-    &quot;&quot;&quot;Calculate grid dimensions for perfect alignment.&quot;&quot;&quot;
-    line_height = &quot;1.20rem&quot;
-    char_width = &quot;1ch&quot;
+    """Calculate grid dimensions for perfect alignment."""
+    line_height = "1.20rem"
+    char_width = "1ch"
     
     return {
-        &quot;vertical_rhythm&quot;: line_height,
-        &quot;horizontal_unit&quot;: char_width
+        "vertical_rhythm": line_height,
+        "horizontal_unit": char_width
     }
 
 # Everything aligns to this grid
 grid = calculate_grid()
-print(f&quot;Line height: {grid['vertical_rhythm']}&quot;)
+print(f"Line height: {grid['vertical_rhythm']}")
 </code></pre>
 <pre><code class="language-css">/* CSS custom properties for the design system */
 :root {
   --line-height: 1.20rem;
-  --font-family: &quot;JetBrains Mono&quot;, monospace;
+  --font-family: "JetBrains Mono", monospace;
   --border-thickness: 2px;
 }
 
@@ -272,7 +297,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
   <figcaption>Images automatically maintain grid alignment with proper aspect ratios</figcaption>
 </figure>
 <h2>Debug Mode</h2>
-<p>At the bottom of every page, you'll find a &quot;Debug grid&quot; checkbox. When enabled, it overlays a visual grid showing how all elements align to the baseline grid. This is invaluable for:</p>
+<p>At the bottom of every page, you'll find a "Debug grid" checkbox. When enabled, it overlays a visual grid showing how all elements align to the baseline grid. This is invaluable for:</p>
 <ul>
 <li>Checking typography alignment</li>
 <li>Identifying layout issues</li>

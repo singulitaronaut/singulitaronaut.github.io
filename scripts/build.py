@@ -3,10 +3,10 @@
 # requires-python = ">=3.12"
 # dependencies = [
 #     "jinja2",
-#     "commonmark",
 #     "pillow",
 #     "python-frontmatter",
 #     "pyyaml",
+#     "mistletoe",
 # ]
 # ///
 """
@@ -16,11 +16,10 @@ Converts markdown files with YAML frontmatter to HTML using Jinja2 templates.
 
 import os
 import shutil
-import frontmatter
-import commonmark
+import frontmatter  # type: ignore
+import mistletoe  # type: ignore
 from jinja2 import Environment, FileSystemLoader
 from datetime import datetime
-import json
 import re
 
 class BlogGenerator:
@@ -61,21 +60,8 @@ class BlogGenerator:
         with open(filepath, 'r', encoding='utf-8') as f:
             post = frontmatter.load(f)
         
-        # Convert markdown content to HTML
-        html_content = commonmark.commonmark(post.content)
-        
-        # Normalize video elements to match reference format
-        def normalize_video(match):
-            alt = match.group(1)
-            src = match.group(2)
-            return f'<figure><video src="{src}" controls=""><a href="{src}">{alt}</a></video><figcaption aria-hidden="true"><a href="{src}">{alt}</a></figcaption></figure>'
-        
-        # Match video elements with various attributes and content
-        html_content = re.sub(
-            r'<p><video[^>]*alt="([^"]*)"[^>]*controls="controls"[^>]*>.*?<source[^>]*src="([^"]*)"[^>]*>.*?</video></p>', 
-            normalize_video, 
-            html_content
-        )
+        # Convert markdown content to HTML (tables supported out of the box)
+        html_content = mistletoe.markdown(post.content)
         
         # Extract metadata
         metadata = post.metadata.copy()
