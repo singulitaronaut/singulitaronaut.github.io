@@ -44,7 +44,7 @@ def take_screenshot():
         page.wait_for_load_state("networkidle")
         
         # Take full page screenshot
-        page.screenshot(path=str(screenshot_path), full_page=True)
+        page.screenshot(path=str(screenshot_path))
         
         browser.close()
     

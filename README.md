@@ -1,14 +1,6 @@
 # The Monospace Blog
 
-<img src="screenshot.png" alt="Monospace Blog Screenshot" width="400" align="right" style="margin-left: 20px; margin-bottom: 20px; max-width: 50%; height: auto;">
-
-<style>
-@media (max-width: 499px) {
-  img[src="screenshot.png"] {
-    max-width: 100% !important;
-  }
-}
-</style>
+![Monospace Blog Screenshot](screenshot.png)
 
 A Python-powered Markdown blog based on [my Python replication](https://github.com/chriscarrollsmith/monospace-web-python) of [The Monospace Web](https://github.com/owickstrom/the-monospace-web) by Oskar Wickström. 
 
