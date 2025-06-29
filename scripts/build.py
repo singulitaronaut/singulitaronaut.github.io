@@ -3,7 +3,7 @@
 # requires-python = ">=3.12"
 # dependencies = [
 #     "jinja2",
-#     "markdown",
+#     "commonmark",
 #     "pillow",
 #     "python-frontmatter",
 #     "pyyaml",
@@ -17,7 +17,7 @@ Converts markdown files with YAML frontmatter to HTML using Jinja2 templates.
 import os
 import shutil
 import frontmatter
-import markdown
+import commonmark
 from jinja2 import Environment, FileSystemLoader
 from datetime import datetime
 import json
@@ -32,15 +32,6 @@ class BlogGenerator:
         
         # Setup Jinja2 environment
         self.env = Environment(loader=FileSystemLoader(templates_dir))
-        
-        # Setup markdown processor
-        self.md = markdown.Markdown(extensions=[
-            'meta',
-            'codehilite',
-            'fenced_code',
-            'tables',
-            'toc'
-        ])
     
     def clean_output_dir(self):
         """Clean the output directory."""
@@ -71,7 +62,7 @@ class BlogGenerator:
             post = frontmatter.load(f)
         
         # Convert markdown content to HTML
-        html_content = self.md.convert(post.content)
+        html_content = commonmark.commonmark(post.content)
         
         # Normalize video elements to match reference format
         def normalize_video(match):

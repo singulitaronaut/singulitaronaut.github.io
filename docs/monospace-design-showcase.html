@@ -110,29 +110,26 @@
     
     
     
-    <h1 id="monospace-design-system-showcase">Monospace Design System Showcase</h1>
+    <h1>Monospace Design System Showcase</h1>
 <p>This post demonstrates the various utility classes and components available in our monospace web design system. Everything aligns to a strict typographic grid for perfect readability.</p>
-<h2 id="grid-system">Grid System</h2>
+<h2>Grid System</h2>
 <p>The <code>.grid</code> class creates a flexible layout system that automatically calculates column widths:</p>
 <div class="grid">
   <p class="width-auto">This paragraph takes up most of the available space using <code>width-auto</code></p>
   <p class="width-min">Minimal space with <code>width-min</code></p>
 </div>
-
 <div class="grid">
   <p>Equal</p>
   <p>Width</p>
   <p>Columns</p>
 </div>
-
 <div class="grid">
   <button>Button 1</button>
   <button>Button 2</button>
   <button>Button 3</button>
   <button>Button 4</button>
 </div>
-
-<h2 id="tree-structure">Tree Structure</h2>
+<h2>Tree Structure</h2>
 <p>Perfect for showing hierarchical information with connecting lines:</p>
 <div class="tree">
   <ul>
@@ -155,42 +152,16 @@
     </li>
   </ul>
 </div>
-
-<h2 id="tables">Tables</h2>
+<h2>Tables</h2>
 <p>Tables are styled with clean borders and proper grid alignment:</p>
-<table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>Description</th>
-<th>Status</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Grid System</td>
-<td>Flexible layout</td>
-<td>✓ Complete</td>
-</tr>
-<tr>
-<td>Typography</td>
-<td>Baseline grid</td>
-<td>✓ Complete</td>
-</tr>
-<tr>
-<td>Dark Mode</td>
-<td>Auto-switching</td>
-<td>✓ Complete</td>
-</tr>
-<tr>
-<td>Debug Tools</td>
-<td>Grid overlay</td>
-<td>✓ Complete</td>
-</tr>
-</tbody>
-</table>
-<h2 id="interactive-elements">Interactive Elements</h2>
-<h3 id="collapsible-details">Collapsible Details</h3>
+<p>| Feature | Description | Status |
+|---------|-------------|--------|
+| Grid System | Flexible layout | ✓ Complete |
+| Typography | Baseline grid | ✓ Complete |
+| Dark Mode | Auto-switching | ✓ Complete |
+| Debug Tools | Grid overlay | ✓ Complete |</p>
+<h2>Interactive Elements</h2>
+<h3>Collapsible Details</h3>
 <details>
   <summary>Design Philosophy</summary>
   <p>The monospace web approach prioritizes:</p>
@@ -201,7 +172,6 @@
     <li>Grid-based layouts</li>
   </ul>
 </details>
-
 <details>
   <summary>Technical Implementation</summary>
   <p>Built with modern CSS features:</p>
@@ -212,8 +182,7 @@
     <li>Logical properties</li>
   </ul>
 </details>
-
-<h3 id="form-elements">Form Elements</h3>
+<h3>Form Elements</h3>
 <div class="grid">
   <label class="width-auto">
     Enter your name:
@@ -223,28 +192,27 @@
     <input type="checkbox"> Subscribe
   </label>
 </div>
-
 <div class="grid">
   <button>Primary Action</button>
   <button>Secondary</button>
 </div>
-
-<h2 id="typography-examples">Typography Examples</h2>
-<h3 id="headings">Headings</h3>
-<h1 id="heading-level-1-uppercase">Heading Level 1 (Uppercase)</h1>
-<h2 id="heading-level-2-uppercase">Heading Level 2 (Uppercase)</h2>
-<h3 id="heading-level-3">Heading Level 3</h3>
-<h4 id="heading-level-4">Heading Level 4</h4>
-<h3 id="text-formatting">Text Formatting</h3>
+<h2>Typography Examples</h2>
+<h3>Headings</h3>
+<h1>Heading Level 1 (Uppercase)</h1>
+<h2>Heading Level 2 (Uppercase)</h2>
+<h3>Heading Level 3</h3>
+<h4>Heading Level 4</h4>
+<h3>Text Formatting</h3>
 <p>This paragraph demonstrates <strong>bold text</strong>, <em>italic text</em>, and <code>inline code</code>. You can also use <sub>subscript</sub> for mathematical notation.</p>
 <blockquote>
 <p>This is a blockquote that maintains proper grid alignment and provides visual emphasis for quoted content.</p>
 </blockquote>
-<h3 id="lists">Lists</h3>
+<h3>Lists</h3>
 <p>Ordered lists use automatic numbering:</p>
 <ol>
 <li>First item</li>
-<li>Second item<ol>
+<li>Second item
+<ol>
 <li>Nested item</li>
 <li>Another nested item</li>
 </ol>
@@ -254,19 +222,20 @@
 <p>Unordered lists use square bullets:</p>
 <ul>
 <li>First point</li>
-<li>Second point<ul>
+<li>Second point
+<ul>
 <li>Nested point</li>
 <li>Another nested point</li>
 </ul>
 </li>
 <li>Third point</li>
 </ul>
-<h2 id="code-blocks">Code Blocks</h2>
-<pre class="codehilite"><code class="language-python">def calculate_grid():
+<h2>Code Blocks</h2>
+<pre><code class="language-python">def calculate_grid():
     &quot;&quot;&quot;Calculate grid dimensions for perfect alignment.&quot;&quot;&quot;
     line_height = &quot;1.20rem&quot;
     char_width = &quot;1ch&quot;
-
+    
     return {
         &quot;vertical_rhythm&quot;: line_height,
         &quot;horizontal_unit&quot;: char_width
@@ -276,8 +245,7 @@
 grid = calculate_grid()
 print(f&quot;Line height: {grid['vertical_rhythm']}&quot;)
 </code></pre>
-
-<pre class="codehilite"><code class="language-css">/* CSS custom properties for the design system */
+<pre><code class="language-css">/* CSS custom properties for the design system */
 :root {
   --line-height: 1.20rem;
   --font-family: &quot;JetBrains Mono&quot;, monospace;
@@ -290,8 +258,7 @@ print(f&quot;Line height: {grid['vertical_rhythm']}&quot;)
   margin-bottom: var(--line-height);
 }
 </code></pre>
-
-<h2 id="whitespace">Whitespace</h2>
+<h2>Whitespace</h2>
 <p>Need to keep every space in place? Wrap your text content in a <code>&lt;pre&gt;</code> element. This tag preserves all whitespace—ideal for ASCII art, log excerpts, or command-line output. Because the design system already uses a monospace font, the characters inside <code>&lt;pre&gt;</code> line up perfectly with the underlying grid:</p>
 <pre>
       |\      _,,,---,,_
@@ -299,22 +266,20 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
      |,4-  ) )-,_. ,\ (  `'-'
     '---''(_/--'  `-'\_)  Credit: Felix Lee
 </pre>
-
-<h2 id="images-and-figures">Images and Figures</h2>
+<h2>Images and Figures</h2>
 <figure>
   <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=400&fit=crop" alt="Minimal workspace" loading="lazy">
   <figcaption>Images automatically maintain grid alignment with proper aspect ratios</figcaption>
 </figure>
-
-<h2 id="debug-mode">Debug Mode</h2>
-<p>At the bottom of every page, you'll find a "Debug grid" checkbox. When enabled, it overlays a visual grid showing how all elements align to the baseline grid. This is invaluable for:</p>
+<h2>Debug Mode</h2>
+<p>At the bottom of every page, you'll find a &quot;Debug grid&quot; checkbox. When enabled, it overlays a visual grid showing how all elements align to the baseline grid. This is invaluable for:</p>
 <ul>
 <li>Checking typography alignment</li>
-<li>Identifying layout issues  </li>
+<li>Identifying layout issues</li>
 <li>Understanding the underlying grid system</li>
 <li>Fine-tuning custom components</li>
 </ul>
-<h2 id="responsive-behavior">Responsive Behavior</h2>
+<h2>Responsive Behavior</h2>
 <p>The design system adapts gracefully across screen sizes:</p>
 <ul>
 <li><strong>Desktop</strong>: Full grid system with optimal reading width</li>
@@ -322,10 +287,11 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 <li><strong>Mobile</strong>: Simplified layout with consistent typography</li>
 </ul>
 <p>All elements maintain their grid alignment regardless of screen size.</p>
-<h2 id="dark-mode">Dark Mode</h2>
+<h2>Dark Mode</h2>
 <p>The system automatically switches between light and dark themes based on your system preference (<code>prefers-color-scheme</code>). All colors are defined using CSS custom properties for seamless theme switching.</p>
 <hr />
 <p>This showcase demonstrates the power and flexibility of the monospace web design system. Every element respects the underlying grid, creating a harmonious and highly readable experience.</p>
+
     
     <hr>
     

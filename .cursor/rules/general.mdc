@@ -35,22 +35,24 @@ Avoid introducing new named CSS classes. This project is themed, and the theme s
 
 ## Markdown style
 
-`python-markdown` strictly complies with the `markdown.pl` spec, so it's essential to write well-formed Markdown. In particular, make sure to separate block-level elements from each other with a blank line. Thus:
+`commonmark` follows the CommonMark specification, which is more permissive than the original markdown.pl spec. This allows for more flexible formatting, such as no blank line between headers and lists, and supports both two-space and four-space indentation for nested lists.
 
 ``` markdown
-**Don't do this**
-- List item will be incorrectly concatenated in `<p>` with list title
+**You can now do this**
+- List item can be directly after a header without a blank line
 ```
 
 ``` markdown
-**Do this instead**
+**This still works too**
 
-- List item will be correctly formatted as `<ul>`
+- List item with blank line separation
 ```
 
-Also, make sure to use four spaces rather than two for indenting nested list items:
+Both two-space and four-space indentation work for nested lists:
 
 ``` markdown
 - First level
-    - Second level
+  - Second level (two spaces)
+- First level
+    - Second level (four spaces)
 ```
