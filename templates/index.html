@@ -10,7 +10,7 @@
         <h2><a href="{{ post.metadata.url }}">{{ post.metadata.title }}</a></h2>
         
         <div class="grid">
-            <p class="width-auto">
+            <p>
                 <time datetime="{{ post.metadata.date.strftime('%Y-%m-%d') }}">
                     {{ post.metadata.date.strftime('%Y-%m-%d') }}
                 </time>
@@ -19,7 +19,7 @@
                 {% endif %}
             </p>
             {% if post.metadata.tags %}
-            <p class="width-min">
+            <p>
                 Tags: 
                 {% for tag in post.metadata.tags %}
                     <code>{{ tag }}</code>{% if not loop.last %}, {% endif %}

@@ -135,12 +135,82 @@ table {
   position: relative;
   top: calc(var(--line-height) / 2);
   width: calc(round(down, 100%, 1ch));
-  border-collapse: collapse;
   margin: 0 0 calc(var(--line-height) * 2);
+  display: grid;
+  --table-cols: 1;
+  --col: round(
+    (100% - (var(--border-thickness) * (var(--table-cols) + 1)))
+    / var(--table-cols),
+    1ch
+  );
 }
+
+/* Make table sections and rows into subgrids */
+thead, tbody, tfoot, tr {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+  margin-top: 0; /* Reset the global * + * margin rule */
+}
+
+/* Override default table cell display */
+td, th {
+  display: block !important; /* Prevent inheriting display: grid from table */
+  margin-top: 0; /* Reset the global * + * margin rule */
+}
+
+/* Grid template columns for different column counts */
+table:has(tr:first-child > :last-child:nth-child(1)) {
+  grid-template-columns: 1fr;
+}
+
+table:has(tr:first-child > :last-child:nth-child(2)) {
+  grid-template-columns: var(--col) 1fr;
+}
+
+table:has(tr:first-child > :last-child:nth-child(3)) {
+  grid-template-columns: var(--col) var(--col) 1fr;
+}
+
+table:has(tr:first-child > :last-child:nth-child(4)) {
+  grid-template-columns: var(--col) var(--col) var(--col) 1fr;
+}
+
+table:has(tr:first-child > :last-child:nth-child(5)) {
+  grid-template-columns: var(--col) var(--col) var(--col) var(--col) 1fr;
+}
+
+table:has(tr:first-child > :last-child:nth-child(6)) {
+  grid-template-columns: var(--col) var(--col) var(--col) var(--col) var(--col) 1fr;
+}
+
+table:has(tr:first-child > :last-child:nth-child(7)) {
+  grid-template-columns: var(--col) var(--col) var(--col) var(--col) var(--col) var(--col) 1fr;
+}
+
+table:has(tr:first-child > :last-child:nth-child(8)) {
+  grid-template-columns: var(--col) var(--col) var(--col) var(--col) var(--col) var(--col) var(--col) 1fr;
+}
+
+table:has(tr:first-child > :last-child:nth-child(9)) {
+  grid-template-columns: var(--col) var(--col) var(--col) var(--col) var(--col) var(--col) var(--col) var(--col) 1fr;
+}
+
+/* Column count detection */
+table:has(tr:first-child > :last-child:nth-child(1)) { --table-cols: 1; }
+table:has(tr:first-child > :last-child:nth-child(2)) { --table-cols: 2; }
+table:has(tr:first-child > :last-child:nth-child(3)) { --table-cols: 3; }
+table:has(tr:first-child > :last-child:nth-child(4)) { --table-cols: 4; }
+table:has(tr:first-child > :last-child:nth-child(5)) { --table-cols: 5; }
+table:has(tr:first-child > :last-child:nth-child(6)) { --table-cols: 6; }
+table:has(tr:first-child > :last-child:nth-child(7)) { --table-cols: 7; }
+table:has(tr:first-child > :last-child:nth-child(8)) { --table-cols: 8; }
+table:has(tr:first-child > :last-child:nth-child(9)) { --table-cols: 9; }
 
 th, td {
   border: var(--border-thickness) solid var(--text-color);
+  border-right: 0; /* Remove right border to prevent doubling */
+  border-bottom: 0; /* Remove bottom border to prevent doubling */
   padding: 
     calc((var(--line-height) / 2))
     calc(1ch - var(--border-thickness) / 2)
@@ -150,29 +220,63 @@ th, td {
   vertical-align: top;
   text-align: left;
 }
-table tbody tr:first-child > * {
-  padding-top: calc((var(--line-height) / 2) - var(--border-thickness));
+
+/* Add right border to last column */
+th:last-child,
+td:last-child {
+  border-right: var(--border-thickness) solid var(--text-color);
+}
+
+/* Add bottom border to last row */
+tbody tr:last-child th,
+tbody tr:last-child td,
+tfoot tr:last-child th,
+tfoot tr:last-child td {
+  border-bottom: var(--border-thickness) solid var(--text-color);
 }
 
 
 th {
   font-weight: 700;
 }
-.width-min {
-  width: 0%;
+
+/* Width utility classes */
+.grid > .width-min {
+  width: auto;
+  flex: none;
 }
-.width-auto {
+.grid > .width-auto {
   width: 100%;
+  flex: 1 1 auto; /* Override grid flex for flexible width */
 }
 
-.header {
+header {
   margin-bottom: calc(var(--line-height) * 2);
 }
-.header h1 {
+header h1 {
   margin: 0;
 }
-.header tr td:last-child {
+header nav {
   text-align: right;
+  width: min-content;
+}
+
+header .grid {
+  gap: 0; /* Remove gap for seamless borders */
+}
+
+header .grid > * {
+  border: var(--border-thickness) solid var(--text-color);
+  padding: 
+    calc((var(--line-height) / 2))
+    calc(1ch - var(--border-thickness) / 2)
+    calc((var(--line-height) / 2) - (var(--border-thickness)))
+  ;
+  border-right: 0; /* Remove right border to prevent doubling */
+}
+
+header .grid > *:last-child {
+  border-right: var(--border-thickness) solid var(--text-color);
 }
 
 p {
