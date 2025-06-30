@@ -127,7 +127,9 @@ em {
 
 sub {
   font-size: 0.75rem;
-  vertical-align: sub;
+  vertical-align: baseline;
+  position: relative;
+  top: 0.25em;
   line-height: 1;
 }
 
@@ -253,19 +255,18 @@ th {
 header {
   margin-bottom: calc(var(--line-height) * 2);
 }
-header h1 {
-  margin: 0;
-}
-header nav {
+header > .width-min {
   text-align: right;
   width: min-content;
 }
 
-header .grid {
+header.grid {
+  position: relative;
+  top: calc(var(--line-height) / 2);
   gap: 0; /* Remove gap for seamless borders */
 }
 
-header .grid > * {
+header.grid > * {
   border: var(--border-thickness) solid var(--text-color);
   padding: 
     calc((var(--line-height) / 2))
@@ -275,7 +276,7 @@ header .grid > * {
   border-right: 0; /* Remove right border to prevent doubling */
 }
 
-header .grid > *:last-child {
+header.grid > *:last-child {
   border-right: var(--border-thickness) solid var(--text-color);
 }
 
@@ -539,8 +540,16 @@ label input {
 .grid > p,
 .grid > div,
 .grid > section,
-.grid > article {
+.grid > article,
+.grid > h1,
+.grid > h2,
+.grid > h3,
+.grid > h4,
+.grid > h5,
+.grid > h6,
+.grid > nav {
   margin-top: var(--line-height);
+  margin-bottom: var(--line-height);
 }
 .grid:has(> :last-child:nth-child(1)) { --grid-cells: 1; }
 .grid:has(> :last-child:nth-child(2)) { --grid-cells: 2; }
