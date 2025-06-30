@@ -54,20 +54,14 @@
     <!-- Debug grid toggle -->
     <div class="debug-grid"></div>
     
-    <header class="header">
-        <table>
-            <tr>
-                <td class="width-auto">
-                    <h1><a href="index.html">My Blog</a></h1>
-                </td>
-                <td class="width-min">
-                    <nav>
-                        <a href="index.html">Home</a>
-                        <a href="about.html">About</a>
-                    </nav>
-                </td>
-            </tr>
-        </table>
+    <header class="grid">
+        <h1 class="width-auto">
+            <a href="index.html">My Blog</a>
+        </h1>
+        <nav class="width-min">
+            <a href="index.html">Home</a><br/>
+            <a href="about.html">About</a>
+        </nav>
     </header>
 
     <main>
@@ -80,7 +74,7 @@
     
     
     <div class="grid">
-        <p class="width-auto">
+        <p>
             
             <time datetime="2024-01-12">
                 2024-01-12
@@ -93,7 +87,7 @@
         </p>
         
         
-        <p class="width-min">
+        <p>
             Tags: 
             
                 <code>design</code>, 
@@ -323,9 +317,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     
     <div class="grid">
         <p class="width-auto"><a href="index.html">← Back to all posts</a></p>
-        <p class="width-min" style="text-align: right;">
-            <button onclick="window.print()">Print</button>
-        </p>
+        <button class="width-min" onclick="window.print()">Print</button>
     </div>
 </article>
 
