@@ -57,7 +57,8 @@ However, it will not work without the blank lines!
 
 ```html
 <div class="tree">
-This will be treated as HTML, so **emphasis** and other Markdown will be rendered as plain text.
+This will be treated as HTML, so **emphasis**
+and other Markdown will be rendered as plain text.
 </div>
 ```
 
