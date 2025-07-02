@@ -22,10 +22,10 @@ jobs:
       with:
         version: "latest"
         
-    - name: Set up Python
-      run: uv python install
+    - name: Install dependencies
+      run: uv sync
         
-    - name: Build blog
+    - name: Build blog and regenerate screenshot
       run: uv run scripts/build.py
         
     - name: Commit and push built files

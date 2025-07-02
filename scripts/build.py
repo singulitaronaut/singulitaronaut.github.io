@@ -1,14 +1,3 @@
-#!/usr/bin/env python3
-# /// script
-# requires-python = ">=3.12"
-# dependencies = [
-#     "jinja2",
-#     "markdown",
-#     "pillow",
-#     "python-frontmatter",
-#     "pyyaml",
-# ]
-# ///
 """
 Markdown Blog Generator
 Converts markdown files with YAML frontmatter to HTML using Jinja2 templates.
@@ -17,11 +6,11 @@ Converts markdown files with YAML frontmatter to HTML using Jinja2 templates.
 import os
 import shutil
 import frontmatter
-import markdown
+import mistletoe
 from jinja2 import Environment, FileSystemLoader
 from datetime import datetime
-import json
 import re
+
 
 class BlogGenerator:
     def __init__(self, posts_dir='posts', templates_dir='templates', output_dir='docs', static_dir='static'):
@@ -32,15 +21,6 @@ class BlogGenerator:
         
         # Setup Jinja2 environment
         self.env = Environment(loader=FileSystemLoader(templates_dir))
-        
-        # Setup markdown processor
-        self.md = markdown.Markdown(extensions=[
-            'meta',
-            'codehilite',
-            'fenced_code',
-            'tables',
-            'toc'
-        ])
     
     def clean_output_dir(self):
         """Clean the output directory while preserving CNAME file."""
@@ -89,8 +69,8 @@ class BlogGenerator:
         with open(filepath, 'r', encoding='utf-8') as f:
             post = frontmatter.load(f)
         
-        # Convert markdown content to HTML
-        html_content = self.md.convert(post.content)
+        # Convert markdown content to HTML (tables supported out of the box)
+        html_content = mistletoe.markdown(post.content)
         
         # Extract metadata
         metadata = post.metadata.copy()

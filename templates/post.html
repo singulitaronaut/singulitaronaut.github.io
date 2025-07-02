@@ -26,9 +26,13 @@
 {% block content %}
 <article>
     <h1>{{ metadata.title }}</h1>
+
+    {% if metadata.description %}
+    <p><em>{{ metadata.description }}</em></p>
+    {% endif %}
     
     <div class="grid">
-        <p class="width-auto">
+        <p>
             {% if metadata.date %}
             <time datetime="{{ metadata.date.strftime('%Y-%m-%d') }}">
                 {{ metadata.date.strftime('%Y-%m-%d') }}
@@ -41,7 +45,7 @@
         </p>
         
         {% if metadata.tags %}
-        <p class="width-min">
+        <p>
             Tags: 
             {% for tag in metadata.tags %}
                 <code>{{ tag }}</code>{% if not loop.last %}, {% endif %}
@@ -49,10 +53,6 @@
         </p>
         {% endif %}
     </div>
-    
-    {% if metadata.description %}
-    <p><em>{{ metadata.description }}</em></p>
-    {% endif %}
     
     {% if metadata.image %}
     <figure>
@@ -67,9 +67,7 @@
     
     <div class="grid">
         <p class="width-auto"><a href="index.html">← Back to all posts</a></p>
-        <p class="width-min">
-            <button onclick="window.print()">Print</button>
-        </p>
+        <button class="width-min" onclick="window.print()">Print</button>
     </div>
 </article>
 {% endblock %} 

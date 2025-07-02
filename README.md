@@ -67,14 +67,6 @@ To fork this repository, you will need to:
 - **Python Simulations**: Self-contained scripts with dependency management for data analysis and modeling
 - **GitHub Actions**: Automatic building and deployment to GitHub Pages
 
-### Content Structure
-
-Posts support enhanced Markdown including:
-- Tree diagrams with `<div class="tree"></div>`
-- Collapsible sections with `<details><summary>`
-- Figures and images with proper semantic markup
-- Full frontmatter support for metadata
-
 ## Join the Journey
 
 The Singularity draws near—perhaps decades, perhaps years away. Whether it brings utopia or catastrophe depends partly on how well we prepare for it, how carefully we think about it, and how wisely we shape the path toward it.

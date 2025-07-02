@@ -10,7 +10,7 @@
         <h2><a href="{{ post.metadata.url }}">{{ post.metadata.title }}</a></h2>
         
         <div class="grid">
-            <p class="width-auto">
+            <p>
                 <time datetime="{{ post.metadata.date.strftime('%Y-%m-%d') }}">
                     {{ post.metadata.date.strftime('%Y-%m-%d') }}
                 </time>
@@ -19,7 +19,7 @@
                 {% endif %}
             </p>
             {% if post.metadata.tags %}
-            <p class="width-min">
+            <p>
                 Tags: 
                 {% for tag in post.metadata.tags %}
                     <code>{{ tag }}</code>{% if not loop.last %}, {% endif %}
@@ -33,9 +33,13 @@
         {% if post.metadata.image %}
         <figure>
             <img src="{{ post.metadata.image }}" alt="{{ post.metadata.title }}" loading="lazy">
-            <figcaption>{{ post.metadata.title }}</figcaption>
+            {% if post.metadata.caption %}
+            <figcaption>{{ post.metadata.caption }}</figcaption>
+            {% endif %}
         </figure>
         {% endif %}
+        
+        <p><a href="{{ post.metadata.url }}">Read more →</a></p>
     </article>
     
     {% if not loop.last %}<hr>{% endif %}
