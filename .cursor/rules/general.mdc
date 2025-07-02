@@ -54,7 +54,7 @@ caption: A caption for the featured image
 
 ### Markdown style
 
-This project's markdown renderer follows the [CommonMark specification](https://commonmark.org/).
+This project's markdown renderer follows the [CommonMark specification](mdc:https:/commonmark.org).
 
 ### HTML
 
@@ -76,7 +76,21 @@ When you stage, commit, and push new Markdown files to `posts`, Github Actions w
 
 ## Research
 
-You may use your web search tools in conjunction with command-line tools like `playwright` and `wget` to conduct Internet research. You may also run simulations with Python, though you should should keep your blog workspace clean by putting any working files in the gitignored `artifacts` folder and constructing `uv`-executable scripts that manage their own dependencies via a header like the following:
+### Internet research
+
+You may use your web search tools in conjunction with command-line tools like `playwright` and `wget` to conduct Internet research.
+
+### Locating a cover image
+
+I generally recommend using Wikimedia Commons images as your cover images for posts. Use web search to find the file name for an image of interest, then use this pattern to get the public URL:
+
+```
+uv run --with pyWikiCommons python -c "from pyWikiCommons import pyWikiCommons; print(pyWikiCommons.get_commons_url('File:Computer_locked.jpg'))"
+```
+
+### Python analyses
+
+You may also run simulations with Python, though you should should keep your blog workspace clean by putting any working files in the gitignored `artifacts` folder and constructing `uv`-executable scripts that manage their own dependencies via a header like the following:
 
 ``` python
 #!/usr/bin/env -S uv run --script
@@ -86,5 +100,7 @@ You may use your web search tools in conjunction with command-line tools like `p
 # dependencies = ["httpx"]
 # ///
 ```
+
+### 
 
 Should you need access to additional tools, feel free to ask. Remember to cite your sources!
