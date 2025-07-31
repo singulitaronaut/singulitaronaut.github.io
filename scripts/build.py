@@ -55,6 +55,15 @@ class BlogGenerator:
                 shutil.rmtree(static_output)
             shutil.copytree(self.static_dir, static_output)
         
+        # Copy images from posts directory to docs directory
+        if os.path.exists(self.posts_dir):
+            for filename in os.listdir(self.posts_dir):
+                if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.svg')):
+                    src_path = os.path.join(self.posts_dir, filename)
+                    dst_path = os.path.join(self.output_dir, filename)
+                    shutil.copy2(src_path, dst_path)
+                    print(f"Copied image: {filename}")
+        
         # Also copy any CSS/JS files from docs/static if they exist (from monospace styling)
         docs_static = os.path.join(self.output_dir, 'static')
         if os.path.exists(docs_static):
