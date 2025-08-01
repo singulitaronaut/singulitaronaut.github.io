@@ -6,7 +6,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+<<<<<<< HEAD
     <loc>https://singulitaronaut.com/2025-07-31-gerrymandering-decoded.html</loc>
+=======
+    <loc>https://singulitaronaut.com/2025-08-01-gerrymandering-corrected.html</loc>
+>>>>>>> 9ad1444 (Corrected post date)
     <lastmod>2025-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
