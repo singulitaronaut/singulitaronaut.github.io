@@ -42,6 +42,15 @@ The magic happens when you combine them: **Efficiency Gap × Total Seats = Real 
 
 **Critical Timing Note**: All data in this analysis reflects redistricting maps that were in effect through July 2025. Texas unveiled brand new congressional maps in late July 2025 during their special session, specifically designed to gain additional Republican seats. These new maps are not reflected in the current analysis, meaning Texas's already extreme metrics (13.8% partisan bias, 13.3% efficiency gap) could potentially become even more distorted. We may be witnessing the first real-time algorithmic optimization of gerrymandering in American history.
 
+**Sample Limitations**: This analysis examines only 15 states representing approximately 287 of 435 House seats (66% of Congress). The sample includes large/swing states (Texas, Florida, California, New York, Pennsylvania, Ohio, Michigan, etc.) and known gerrymandering cases (Maryland, Illinois), but excludes 35 states representing ~148 House seats. This selection bias toward larger, more visible gerrymandering cases may skew several conclusions:
+
+- The "Republicans control fewer states" finding likely understates GOP gerrymandering in smaller states
+- National impact calculations are incomplete, missing 1/3 of House seats  
+- The California "stealth gerrymandering" revelation may be less unique in full context
+- Systematic small-state gerrymandering patterns could reveal different strategic approaches
+
+A complete 50-state analysis would likely show Republicans controlling gerrymandering in significantly more states, potentially altering the efficiency comparisons and making California's extreme metrics appear less exceptional.
+
 ---
 
 ## The View from 30,000 Feet (Or: How I Learned to Stop Worrying and Love the Algorithm)
